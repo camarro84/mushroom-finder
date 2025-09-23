@@ -1,49 +1,26 @@
 import React from 'react';
-import { useColorScheme } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MapScreen from '../screens/MapScreen';
 import CatalogScreen from '../screens/CatalogScreen';
 import DangerScreen from '../screens/DangerScreen';
 import SettingsScreen from '../screens/SettingsScreen';
-import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 
 const Tab = createBottomTabNavigator();
 
 export default function MainTabs() {
-  const scheme = useColorScheme();
-  const isDark = scheme === 'dark';
-  const bg = isDark ? '#0f0f10' : '#ffffff';
-  const border = isDark ? '#252525' : '#e5e5e5';
-  const active = '#2E7D32';
-  const inactive = isDark ? '#b5b5b5' : '#666666';
-
+  const { t } = useTranslation();
   return (
-    <Tab.Navigator
-      screenOptions={({ route }) => ({
-        headerShown: false,
-        tabBarStyle: { backgroundColor: bg, borderTopColor: border },
-        tabBarActiveTintColor: active,
-        tabBarInactiveTintColor: inactive,
-        tabBarIcon: ({ color, size }) => {
-          switch (route.name) {
-            case 'Map':
-              return <Ionicons name="map-outline" size={size} color={color} />;
-            case 'Catalog':
-              return <MaterialCommunityIcons name="mushroom-outline" size={size} color={color} />;
-            case 'Danger':
-              return <Ionicons name="warning-outline" size={size} color={color} />;
-            case 'Settings':
-              return <Ionicons name="settings-outline" size={size} color={color} />;
-            default:
-              return null;
-          }
-        },
-      })}
-    >
-      <Tab.Screen name="Map" component={MapScreen} />
-      <Tab.Screen name="Catalog" component={CatalogScreen} />
-      <Tab.Screen name="Danger" component={DangerScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
+    <Tab.Navigator screenOptions={{
+      headerShown: false,
+      tabBarActiveTintColor: '#2E7D32',
+      tabBarInactiveTintColor: '#6b7280'
+    }}>
+      <Tab.Screen name="Map" component={MapScreen} options={{ title: t('tabs.map'), tabBarIcon: ({color, size}) => <Ionicons name="map-outline" size={size} color={color} /> }} />
+      <Tab.Screen name="Catalog" component={CatalogScreen} options={{ title: t('tabs.catalog'), tabBarIcon: ({color, size}) => <MaterialCommunityIcons name="mushroom-outline" size={size} color={color} /> }} />
+      <Tab.Screen name="Danger" component={DangerScreen} options={{ title: t('tabs.danger'), tabBarIcon: ({color, size}) => <Ionicons name="warning-outline" size={size} color={color} /> }} />
+      <Tab.Screen name="Settings" component={SettingsScreen} options={{ title: t('tabs.settings'), tabBarIcon: ({color, size}) => <Ionicons name="settings-outline" size={size} color={color} /> }} />
     </Tab.Navigator>
   );
 }

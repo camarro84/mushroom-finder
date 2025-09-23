@@ -1,35 +1,68 @@
-import React from 'react';
-import { Text, View } from 'react-native';
-import Screen from '../components/Screen';
-import Button from '../components/Button';
-import { useThemeMode, ThemeMode } from '../theme';
+import React, { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, Switch, TouchableOpacity, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { STORAGE_KEYS } from '../storage/keys';
+import i18n from '../i18n';
+import { useTranslation } from 'react-i18next';
 
 export default function SettingsScreen({ navigation }: any) {
-  const { mode, setMode } = useThemeMode();
+  const { t } = useTranslation();
+  const [spotsVisible, setSpotsVisible] = useState(true);
+  const [haptics, setHaptics] = useState(true);
 
-  const resetConsent = async () => {
-    await AsyncStorage.removeItem(STORAGE_KEYS.LANGUAGE);
-    await AsyncStorage.removeItem(STORAGE_KEYS.TOS_ACCEPTED);
-    navigation.reset({ index: 0, routes: [{ name: 'Language' }] });
-  };
-
-  const setThemeMode = (m: ThemeMode) => setMode(m);
+  useEffect(() => {
+    (async () => {
+      setSpotsVisible((await AsyncStorage.getItem(STORAGE_KEYS.SPOTS_VISIBLE)) !== 'false');
+      setHaptics((await AsyncStorage.getItem(STORAGE_KEYS.HAPTICS_ENABLED)) !== 'false');
+    })();
+  }, []);
 
   return (
-    <Screen>
-      <Text className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 text-center mb-4">Settings</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>{t('settings.title')}</Text>
 
-      <Text className="text-xs font-bold text-neutral-600 dark:text-neutral-300 mb-2">Theme</Text>
-      <View className="flex-row gap-2">
-        <Button variant={mode==='light' ? 'primary' : 'secondary'} label="Light"  onPress={()=>setThemeMode('light')} />
-        <Button variant={mode==='dark'  ? 'primary' : 'secondary'} label="Dark"   onPress={()=>setThemeMode('dark')} />
-        <Button variant={mode==='system'? 'primary' : 'secondary'} label="System" onPress={()=>setThemeMode('system')} />
+      <View style={styles.row}>
+        <Text style={styles.rowText}>{t('settings.spotsVisibility')}</Text>
+        <Switch value={spotsVisible} onValueChange={async v=>{ setSpotsVisible(v); await AsyncStorage.setItem(STORAGE_KEYS.SPOTS_VISIBLE, String(v)); }} />
+      </View>
+      <View style={styles.row}>
+        <Text style={styles.rowText}>{t('settings.haptics')}</Text>
+        <Switch value={haptics} onValueChange={async v=>{ setHaptics(v); await AsyncStorage.setItem(STORAGE_KEYS.HAPTICS_ENABLED, String(v)); }} />
       </View>
 
-      <Text className="text-xs font-bold text-neutral-600 dark:text-neutral-300 mt-6 mb-2">Consent</Text>
-      <Button variant="secondary" label="Change Language / Reset Consent" onPress={resetConsent} />
-    </Screen>
+      <View style={{height:20}} />
+      <Text style={[styles.section]}>Language</Text>
+      <View style={{flexDirection:'row', gap:8, flexWrap:'wrap'}}>
+        {(['en','ua','pl','ru'] as const).map(code => (
+          <TouchableOpacity key={code} onPress={async()=>{
+            await AsyncStorage.setItem(STORAGE_KEYS.LANGUAGE, code);
+            i18n.changeLanguage(code);
+            Alert.alert('Language changed', 'Restart the app to apply everywhere.');
+          }} style={styles.langBtn}>
+            <Text style={{color:'#fff', fontWeight:'700'}}>{code.toUpperCase()}</Text>
+          </TouchableOpacity>
+        ))}
+      </View>
+
+      <View style={{height:20}} />
+      <TouchableOpacity
+        onPress={async ()=>{
+          await AsyncStorage.removeItem(STORAGE_KEYS.TOS_ACCEPTED);
+          Alert.alert('Consent reset', 'You will see the disclaimer next launch.');
+        }}
+        style={[styles.bigBtn,{backgroundColor:'#111827'}]}
+      >
+        <Text style={{color:'#fff', fontWeight:'800'}}>{t('settings.resetConsent')}</Text>
+      </TouchableOpacity>
+    </View>
   );
 }
+const styles = StyleSheet.create({
+  container:{ flex:1, backgroundColor:'#0A0A0A', padding:16 },
+  title:{ color:'#fff', fontSize:20, fontWeight:'800', marginBottom:12, textAlign:'center' },
+  row:{ flexDirection:'row', alignItems:'center', justifyContent:'space-between', paddingVertical:12 },
+  rowText:{ color:'#d1d5db', fontSize:16 },
+  section:{ color:'#9ca3af', marginBottom:8, fontWeight:'700' },
+  langBtn:{ backgroundColor:'#2E7D32', paddingHorizontal:16, paddingVertical:10, borderRadius:12, borderWidth:1, borderColor:'#1f2937' },
+  bigBtn:{ padding:14, borderRadius:14, alignItems:'center', borderWidth:1, borderColor:'#1f2937' }
+});

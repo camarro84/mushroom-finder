@@ -1,50 +1,46 @@
-// src/db/spots.ts
 import * as SQLite from 'expo-sqlite';
 
-// новый async API
-const dbPromise = SQLite.openDatabaseAsync('mushroom.db');
-
 export type Spot = {
-  id?: number;
+  id: number;
   title: string;
-  note?: string;
   lat: number;
   lng: number;
-  created_at?: string;
+  createdAt: number;
 };
 
-export async function initSpots(): Promise<void> {
-  const db = await dbPromise;
-  await db.execAsync(`
+let _db: SQLite.SQLiteDatabase | null = null;
+
+export async function getDb() {
+  if (_db) return _db;
+  _db = await SQLite.openDatabaseAsync('spots.db');
+  await _db.execAsync(`
+    PRAGMA journal_mode = WAL;
     CREATE TABLE IF NOT EXISTS spots (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
       title TEXT NOT NULL,
-      note TEXT,
       lat REAL NOT NULL,
       lng REAL NOT NULL,
-      created_at TEXT DEFAULT (datetime('now'))
+      createdAt INTEGER NOT NULL
     );
+    CREATE INDEX IF NOT EXISTS idx_spots_time ON spots(createdAt DESC);
   `);
+  return _db;
 }
 
-export async function addSpot(spot: Spot): Promise<number> {
-  const db = await dbPromise;
-  const res = await db.runAsync(
-    'INSERT INTO spots (title, note, lat, lng) VALUES (?,?,?,?)',
-    [spot.title, spot.note ?? '', spot.lat, spot.lng]
-  );
-  return Number(res.lastInsertRowId);
-}
-
-export async function getSpots(): Promise<Spot[]> {
-  const db = await dbPromise;
-  const rows = await db.getAllAsync<Spot>(
-    'SELECT id, title, note, lat, lng, created_at FROM spots ORDER BY id DESC'
-  );
+export async function listSpots(): Promise<Spot[]> {
+  const db = await getDb();
+  const rows = await db.getAllAsync<Spot>('SELECT * FROM spots ORDER BY createdAt DESC;');
   return rows;
 }
 
-export async function deleteSpot(id: number): Promise<void> {
-  const db = await dbPromise;
-  await db.runAsync('DELETE FROM spots WHERE id = ?', [id]);
+export async function addSpot(title: string, lat: number, lng: number): Promise<number> {
+  const db = await getDb();
+  const createdAt = Date.now();
+  const res = await db.runAsync('INSERT INTO spots (title, lat, lng, createdAt) VALUES (?, ?, ?, ?);', [title, lat, lng, createdAt]);
+  return res.lastInsertRowId as number;
+}
+
+export async function removeSpot(id: number): Promise<void> {
+  const db = await getDb();
+  await db.runAsync('DELETE FROM spots WHERE id = ?;', [id]);
 }

@@ -4,10 +4,35 @@
   "lang.ukrainian": "Українська",
   "lang.polish": "Polski",
   "lang.russian": "Русский",
+
   "disclaimer.title": "Disclaimer",
-  "disclaimer.text": "This application is for informational and educational purposes only. The author does not guarantee the accuracy of mushroom identification and is not responsible for any consequences of using this app. By pressing \"Accept\", you agree to these terms.",
+  "disclaimer.text": "This app is educational only. We do not guarantee the accuracy of mushroom identification and accept no liability for use. By tapping \"Accept\", you agree.",
   "disclaimer.accept": "Accept",
   "disclaimer.decline": "Decline",
-  "disclaimer.declineMsg": "We're sorry the app didn't meet your needs. Hope to see you again!",
+  "disclaimer.declineMsg": "We're sorry the app didn't fit your needs.",
+
+  "tabs.map": "Map",
+  "tabs.catalog": "Catalog",
+  "tabs.danger": "Danger",
+  "tabs.settings": "Settings",
+
+  "map.title": "Map",
+  "map.searchSpots": "Saved spots",
+  "map.addSpot": "Add spot",
+  "map.hideSpots": "Hide",
+  "map.showSpots": "Show",
+  "map.zoomInToSee": "Zoom in to see spots",
+
+  "catalog.title": "Mushroom Catalog",
+  "catalog.search": "Search mushrooms...",
+
+  "danger.title": "Dangerous mushrooms in this region",
+
+  "settings.title": "Settings",
+  "settings.language": "Language",
+  "settings.resetConsent": "Reset disclaimer consent",
+  "settings.spotsVisibility": "Show saved spots by default",
+  "settings.haptics": "Haptic feedback",
+
   "home.title": "Mushroom Finder"
 }

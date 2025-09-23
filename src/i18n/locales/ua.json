@@ -4,10 +4,35 @@
   "lang.ukrainian": "Українська",
   "lang.polish": "Polski",
   "lang.russian": "Русский",
+
   "disclaimer.title": "Застереження",
-  "disclaimer.text": "Додаток має виключно довідковий та освітній характер. Автор не гарантує точності визначення грибів і не несе відповідальності за наслідки використання. Натискаючи \"Приймаю\", ви погоджуєтеся з цими умовами.",
+  "disclaimer.text": "Додаток має освітній характер. Точність визначення грибів не гарантується, відповідальність не несемо. Натискаючи \"Приймаю\", ви погоджуєтеся.",
   "disclaimer.accept": "Приймаю",
-  "disclaimer.decline": "Не згоден",
-  "disclaimer.declineMsg": "Нам дуже шкода, що додаток вам не підійшов. Сподіваємося побачити вас знову!",
+  "disclaimer.decline": "Відхилити",
+  "disclaimer.declineMsg": "Нам шкода, що додаток вам не підійшов.",
+
+  "tabs.map": "Карта",
+  "tabs.catalog": "Довідник",
+  "tabs.danger": "Небезпечні",
+  "tabs.settings": "Налаштування",
+
+  "map.title": "Карта",
+  "map.searchSpots": "Збережені місця",
+  "map.addSpot": "Додати",
+  "map.hideSpots": "Сховати",
+  "map.showSpots": "Показати",
+  "map.zoomInToSee": "Наблизьте карту, щоб побачити місця",
+
+  "catalog.title": "Довідник грибів",
+  "catalog.search": "Пошук грибів...",
+
+  "danger.title": "Небезпечні гриби регіону",
+
+  "settings.title": "Налаштування",
+  "settings.language": "Мова",
+  "settings.resetConsent": "Скинути згоду",
+  "settings.spotsVisibility": "Показувати місця за замовчуванням",
+  "settings.haptics": "Тактильний відгук",
+
   "home.title": "Пошук грибів"
 }

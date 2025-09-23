@@ -3,9 +3,8 @@
   "compilerOptions": {
     "strict": true,
     "jsx": "react-native",
-    "types": [
-      "nativewind/types"
-    ]
+    "resolveJsonModule": true,
+    "skipLibCheck": true
   },
   "include": [
     "app.d.ts",

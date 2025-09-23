@@ -1,0 +1,5 @@
+[
+  { "id": 1, "name": "Boletus edulis", "common": "Porcini", "edible": true, "notes": "Spruce & birch forests, late summer–autumn." },
+  { "id": 2, "name": "Cantharellus cibarius", "common": "Chanterelle", "edible": true, "notes": "Mossy coniferous forests, summer–autumn." },
+  { "id": 3, "name": "Amanita phalloides", "common": "Death cap", "edible": false, "notes": "Highly toxic. Mixed forests." }
+]

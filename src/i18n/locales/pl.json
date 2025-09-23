@@ -4,10 +4,35 @@
   "lang.ukrainian": "Українська",
   "lang.polish": "Polski",
   "lang.russian": "Русский",
+
   "disclaimer.title": "Zastrzeżenie",
-  "disclaimer.text": "Ta aplikacja ma wyłącznie charakter informacyjny i edukacyjny. Autor nie gwarantuje dokładności identyfikacji grzybów i nie ponosi odpowiedzialności za skutki korzystania z aplikacji. Naciskając \"Akceptuję\", wyrażasz zgodę na te warunki.",
+  "disclaimer.text": "Aplikacja ma charakter edukacyjny. Nie gwarantujemy poprawnej identyfikacji grzybów i nie ponosimy odpowiedzialności. Naciskając \"Akceptuję\", zgadzasz się.",
   "disclaimer.accept": "Akceptuję",
   "disclaimer.decline": "Odrzuć",
-  "disclaimer.declineMsg": "Przykro nam, że aplikacja Ci nie odpowiada. Mamy nadzieję, że jeszcze wrócisz!",
+  "disclaimer.declineMsg": "Przykro nam, że aplikacja nie odpowiada.",
+
+  "tabs.map": "Mapa",
+  "tabs.catalog": "Katalog",
+  "tabs.danger": "Niebezpieczne",
+  "tabs.settings": "Ustawienia",
+
+  "map.title": "Mapa",
+  "map.searchSpots": "Zapisane miejsca",
+  "map.addSpot": "Dodaj",
+  "map.hideSpots": "Ukryj",
+  "map.showSpots": "Pokaż",
+  "map.zoomInToSee": "Przybliż, aby zobaczyć miejsca",
+
+  "catalog.title": "Katalog grzybów",
+  "catalog.search": "Szukaj grzybów...",
+
+  "danger.title": "Niebezpieczne grzyby regionu",
+
+  "settings.title": "Ustawienia",
+  "settings.language": "Język",
+  "settings.resetConsent": "Resetuj zgodę",
+  "settings.spotsVisibility": "Domyślnie pokazuj miejsca",
+  "settings.haptics": "Wibracje",
+
   "home.title": "Wyszukiwarka grzybów"
 }
