@@ -17,12 +17,7 @@ export default function CatalogScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{t('catalog.title')}</Text>
-      <TextInput
-        placeholder={t('catalog.search')}
-        placeholderTextColor="#9ca3af"
-        value={q} onChangeText={setQ}
-        style={styles.input}
-      />
+      <TextInput placeholder={t('catalog.search')} placeholderTextColor="#9ca3af" value={q} onChangeText={setQ} style={styles.input} />
       <FlatList
         data={filtered}
         keyExtractor={x=>String(x.id)}

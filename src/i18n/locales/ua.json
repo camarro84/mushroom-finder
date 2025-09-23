@@ -11,8 +11,11 @@
   "disclaimer.decline": "Відхилити",
   "disclaimer.declineMsg": "Нам шкода, що додаток вам не підійшов.",
 
+  "loading.title": "Завантаження…",
+
   "tabs.map": "Карта",
   "tabs.catalog": "Довідник",
+  "tabs.identify": "Розпізнати",
   "tabs.danger": "Небезпечні",
   "tabs.settings": "Налаштування",
 
@@ -33,6 +36,12 @@
   "settings.resetConsent": "Скинути згоду",
   "settings.spotsVisibility": "Показувати місця за замовчуванням",
   "settings.haptics": "Тактильний відгук",
+
+  "identify.title": "Розпізнавання за фото",
+  "identify.pick": "Вибрати з галереї",
+  "identify.camera": "Відкрити камеру",
+  "identify.identify": "Розпізнати",
+  "identify.hint": "Використовуйте чітке, добре освітлене фото.",
 
   "home.title": "Пошук грибів"
 }

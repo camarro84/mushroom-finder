@@ -11,8 +11,11 @@
   "disclaimer.decline": "Decline",
   "disclaimer.declineMsg": "We're sorry the app didn't fit your needs.",
 
+  "loading.title": "Loading…",
+
   "tabs.map": "Map",
   "tabs.catalog": "Catalog",
+  "tabs.identify": "Identify",
   "tabs.danger": "Danger",
   "tabs.settings": "Settings",
 
@@ -33,6 +36,12 @@
   "settings.resetConsent": "Reset disclaimer consent",
   "settings.spotsVisibility": "Show saved spots by default",
   "settings.haptics": "Haptic feedback",
+
+  "identify.title": "Identify by Photo",
+  "identify.pick": "Choose from library",
+  "identify.camera": "Open camera",
+  "identify.identify": "Identify",
+  "identify.hint": "Use a clear, well-lit photo. We'll compare it with lookalikes.",
 
   "home.title": "Mushroom Finder"
 }

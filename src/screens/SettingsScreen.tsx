@@ -5,7 +5,7 @@ import { STORAGE_KEYS } from '../storage/keys';
 import i18n from '../i18n';
 import { useTranslation } from 'react-i18next';
 
-export default function SettingsScreen({ navigation }: any) {
+export default function SettingsScreen() {
   const { t } = useTranslation();
   const [spotsVisible, setSpotsVisible] = useState(true);
   const [haptics, setHaptics] = useState(true);

@@ -11,8 +11,11 @@
   "disclaimer.decline": "Отклонить",
   "disclaimer.declineMsg": "Жаль, что приложение вам не подошло.",
 
+  "loading.title": "Загрузка…",
+
   "tabs.map": "Карта",
   "tabs.catalog": "Справочник",
+  "tabs.identify": "Распознать",
   "tabs.danger": "Опасные",
   "tabs.settings": "Настройки",
 
@@ -33,6 +36,12 @@
   "settings.resetConsent": "Сбросить согласие",
   "settings.spotsVisibility": "Показывать места по умолчанию",
   "settings.haptics": "Тактильная отдача",
+
+  "identify.title": "Идентификация по фото",
+  "identify.pick": "Выбрать из галереи",
+  "identify.camera": "Открыть камеру",
+  "identify.identify": "Определить",
+  "identify.hint": "Используйте чёткое, хорошо освещённое фото.",
 
   "home.title": "Поисковик грибов"
 }

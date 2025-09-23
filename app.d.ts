@@ -1,1 +1,1 @@
-// пустой-флажок, но пригодится под будущие типы/глобальные объявления
+// reserved for global typings (empty on purpose)

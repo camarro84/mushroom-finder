@@ -15,7 +15,10 @@
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
-        "NSLocationWhenInUseUsageDescription": "We use your location to show your position on the map and let you save mushroom spots nearby."
+        "NSLocationWhenInUseUsageDescription": "We use your location to show your position on the map and let you save mushroom spots nearby.",
+        "NSCameraUsageDescription": "We use the camera so you can take a mushroom photo for identification.",
+        "NSPhotoLibraryUsageDescription": "We access your photo library to pick images for identification.",
+        "NSPhotoLibraryAddUsageDescription": "We may save images to your photo library when you export or save media."
       }
     },
     "android": {
@@ -23,14 +26,18 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#0A0A0A"
       },
-      "permissions": ["ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION"],
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "CAMERA",
+        "READ_MEDIA_IMAGES"
+      ],
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
+    "web": { "favicon": "./assets/favicon.png" },
     "plugins": ["expo-localization"],
+    "assetBundlePatterns": ["**/*"],
     "updates": { "fallbackToCacheTimeout": 0 }
   }
 }

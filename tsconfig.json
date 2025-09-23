@@ -6,9 +6,5 @@
     "resolveJsonModule": true,
     "skipLibCheck": true
   },
-  "include": [
-    "app.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "include": ["app.d.ts", "**/*.ts", "**/*.tsx"]
 }

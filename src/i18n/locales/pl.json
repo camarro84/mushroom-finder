@@ -11,8 +11,11 @@
   "disclaimer.decline": "Odrzuć",
   "disclaimer.declineMsg": "Przykro nam, że aplikacja nie odpowiada.",
 
+  "loading.title": "Ładowanie…",
+
   "tabs.map": "Mapa",
   "tabs.catalog": "Katalog",
+  "tabs.identify": "Identyfikuj",
   "tabs.danger": "Niebezpieczne",
   "tabs.settings": "Ustawienia",
 
@@ -33,6 +36,12 @@
   "settings.resetConsent": "Resetuj zgodę",
   "settings.spotsVisibility": "Domyślnie pokazuj miejsca",
   "settings.haptics": "Wibracje",
+
+  "identify.title": "Identyfikacja ze zdjęcia",
+  "identify.pick": "Wybierz z galerii",
+  "identify.camera": "Otwórz aparat",
+  "identify.identify": "Identyfikuj",
+  "identify.hint": "Użyj wyraźnego, dobrze oświetlonego zdjęcia.",
 
   "home.title": "Wyszukiwarka grzybów"
 }

@@ -9,7 +9,7 @@ export default function DisclaimerScreen({ navigation }: any) {
   const { t } = useTranslation();
   const accept = async () => {
     await AsyncStorage.setItem(STORAGE_KEYS.TOS_ACCEPTED, 'true');
-    navigation.reset({ index: 0, routes: [{ name: 'Tabs' }] });
+    navigation.reset({ index: 0, routes: [{ name: 'Loading' }] });
   };
   const decline = () => Alert.alert(t('disclaimer.title'), t('disclaimer.declineMsg'));
   return (
