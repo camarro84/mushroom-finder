@@ -1,0 +1,13 @@
+{
+  "lang.title": "Choose your language",
+  "lang.english": "English",
+  "lang.ukrainian": "Українська",
+  "lang.polish": "Polski",
+  "lang.russian": "Русский",
+  "disclaimer.title": "Disclaimer",
+  "disclaimer.text": "This application is for informational and educational purposes only. The author does not guarantee the accuracy of mushroom identification and is not responsible for any consequences of using this app. By pressing \"Accept\", you agree to these terms.",
+  "disclaimer.accept": "Accept",
+  "disclaimer.decline": "Decline",
+  "disclaimer.declineMsg": "We're sorry the app didn't meet your needs. Hope to see you again!",
+  "home.title": "Mushroom Finder"
+}

@@ -1,0 +1,13 @@
+{
+  "lang.title": "Wybierz język",
+  "lang.english": "English",
+  "lang.ukrainian": "Українська",
+  "lang.polish": "Polski",
+  "lang.russian": "Русский",
+  "disclaimer.title": "Zastrzeżenie",
+  "disclaimer.text": "Ta aplikacja ma wyłącznie charakter informacyjny i edukacyjny. Autor nie gwarantuje dokładności identyfikacji grzybów i nie ponosi odpowiedzialności za skutki korzystania z aplikacji. Naciskając \"Akceptuję\", wyrażasz zgodę na te warunki.",
+  "disclaimer.accept": "Akceptuję",
+  "disclaimer.decline": "Odrzuć",
+  "disclaimer.declineMsg": "Przykro nam, że aplikacja Ci nie odpowiada. Mamy nadzieję, że jeszcze wrócisz!",
+  "home.title": "Wyszukiwarka grzybów"
+}
