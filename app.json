@@ -4,17 +4,14 @@
     "slug": "mushroom-finder",
     "scheme": "mushroomfinder",
     "version": "1.0.0",
-
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
-
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#0A0A0A"
     },
-
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.yourname.mushroomfinder",
@@ -29,7 +26,6 @@
         "googleMapsApiKey": "YOUR_IOS_MAPS_KEY"
       }
     },
-
     "android": {
       "package": "com.yourname.mushroomfinder",
       "versionCode": 1,
@@ -46,21 +42,31 @@
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
       "config": {
-        "googleMaps": { "apiKey": "YOUR_ANDROID_MAPS_KEY" }
+        "googleMaps": {
+          "apiKey": "YOUR_ANDROID_MAPS_KEY"
+        }
       }
     },
-
-    "web": { "favicon": "./assets/favicon.png" },
-
-    "plugins": [ "expo-localization" ],
-
-    "assetBundlePatterns": [ "**/*" ],
-
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-localization"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "updates": {
       "url": "https://u.expo.dev/ade2f3be-d918-477f-90ac-70d6c19e6c33",
       "fallbackToCacheTimeout": 0
     },
-
-    "runtimeVersion": { "policy": "appVersion" }
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ade2f3be-d918-477f-90ac-70d6c19e6c33"
+      }
+    }
   }
 }
