@@ -4,24 +4,35 @@
     "slug": "mushroom-finder",
     "scheme": "mushroomfinder",
     "version": "1.0.0",
+
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
+
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#0A0A0A"
     },
+
     "ios": {
       "supportsTablet": true,
+      "bundleIdentifier": "com.yourname.mushroomfinder",
+      "buildNumber": "1",
       "infoPlist": {
         "NSLocationWhenInUseUsageDescription": "We use your location to show your position on the map and let you save mushroom spots nearby.",
         "NSCameraUsageDescription": "We use the camera so you can take a mushroom photo for identification.",
         "NSPhotoLibraryUsageDescription": "We access your photo library to pick images for identification.",
         "NSPhotoLibraryAddUsageDescription": "We may save images to your photo library when you export or save media."
+      },
+      "config": {
+        "googleMapsApiKey": "YOUR_IOS_MAPS_KEY"
       }
     },
+
     "android": {
+      "package": "com.yourname.mushroomfinder",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#0A0A0A"
@@ -33,11 +44,23 @@
         "READ_MEDIA_IMAGES"
       ],
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "config": {
+        "googleMaps": { "apiKey": "YOUR_ANDROID_MAPS_KEY" }
+      }
     },
+
     "web": { "favicon": "./assets/favicon.png" },
-    "plugins": ["expo-localization"],
-    "assetBundlePatterns": ["**/*"],
-    "updates": { "fallbackToCacheTimeout": 0 }
+
+    "plugins": [ "expo-localization" ],
+
+    "assetBundlePatterns": [ "**/*" ],
+
+    "updates": {
+      "url": "https://u.expo.dev/ade2f3be-d918-477f-90ac-70d6c19e6c33",
+      "fallbackToCacheTimeout": 0
+    },
+
+    "runtimeVersion": { "policy": "appVersion" }
   }
 }
